@@ -1,2 +1,4 @@
-textbookexchange
-================
+Textbook Exchange
+=================
+
+Lehigh University Senior Project
