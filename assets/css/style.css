@@ -1,0 +1,199 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul,ol,li {
+	list-style: none
+}
+
+hr {
+	background-image: -webkit-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -moz-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -ms-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -o-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	border: 0;
+	height: 1px;
+	margin: 30px auto;
+	width: 1000px;
+}
+
+hr.short {
+	background-image: -webkit-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -moz-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -ms-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	background-image: -o-linear-gradient(left, transparent, rgba(52,73,94,0.75), transparent);
+	border: 0;
+	height: 1px;
+	margin: 15px auto;
+	width: 300px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.title {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	background-color: #ecf0f1;
+	color: #34495e;
+	/*font-family: 'Oswald', sans-serif;*/
+	font-family: 'Gentium Basic', serif;
+}
+
+header {
+	width: 100%;
+	background-color: #FFEC94;
+	border-bottom: 1px solid #E6D37B;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+	color: #34495e;
+	text-align: center;
+	padding: 10px;
+}
+
+	header h1 {
+		font-size: 50px;
+	}
+
+	header ul {
+		margin-top: 5px;
+	}
+
+		header ul li {
+			display: inline;
+			padding: 0 35px;
+		}
+
+	header input {
+		width: 20%;
+		padding: 5px;
+		margin: 15px 0 5px 0;
+		text-align: center;
+		font-size: 15px;
+		border: 1px solid #bdc3c7;
+	}
+
+	header i {
+		color: #34495e;
+		margin-left: -45px;
+	}
+
+main {
+	padding: 10px;
+}
+
+	.getting_started {
+		text-align: center;
+		margin: 0 auto;
+		margin-top: 20px;
+		margin-bottom: 50px;
+	}
+
+		.getting_started h1 {
+			font-size: 35px;
+			margin-bottom: 30px;
+		}
+
+		.getting_started ul {
+			margin-top: 15px;
+		}
+
+			.getting_started ul li {
+				display: inline-block;
+				width: 20%;
+			}
+
+				.getting_started ul li i {
+					font-size: 60px;
+					border: 1px solid black;
+					border-radius: 50%;
+					height: 70px;
+					width: 70px;
+				}
+
+					.fa-sign-in {
+						padding: 25px 19px 13px 19px;
+					}
+
+					.fa-search {
+						padding: 25px 19px 13px 19px;
+					}
+
+					.fa-book {
+						padding: 25px 19px 13px 19px;
+					}
+
+				.getting_started ul li div {
+					width: 100%;
+				}
+
+					.getting_started ul li div .big_title {
+						font-size: 27px;
+					}
+
+	.popular_wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+		.popular_textbooks {
+			width: 50%;
+			float: left;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 15px;
+		}
+
+			.popular_textbooks h1 {
+				font-size: 35px;
+				margin-bottom: 20px;
+			}
+
+				.popular_textbooks ul li .pop_title {
+					font-size: 20px;
+				}
+
+				.popular_textbooks ul li span {
+					padding: 0 10px;
+				}
+
+		.popular_courses {
+			width: 50%;
+			float: left;
+			margin: 0 auto;
+			text-align: center;
+			margin-top: 15px;
+		}
+
+			.popular_courses h1 {
+				font-size: 35px;
+				margin-bottom: 20px;
+			}
+
+				.popular_courses ul li p {
+					font-size: 20px;
+				}
+
+				.popular_courses ul li span {
+					padding: 0 10px;
+				}
+
+footer {
+	width: 100%;
+	background-color: #34495e;
+	font-family: 'Open Sans';
+	color: #ecf0f1;
+	padding: 15px 10px;
+	text-align: center;
+	margin-top: 30px;
+}

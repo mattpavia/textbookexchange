@@ -1,88 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+    <meta charset="utf-8">
+    <title>Textbook Exchange</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800,600,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
 
-	<style type="text/css">
-
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+    <header>
+        <h1>Textbook Exchange</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Textbooks</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <input type="text" placeholder="Search ISBN, Course, Author...">
+        <a href="#"><i class="fa fa-search"></i></a>
+    </header>
 
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
+    <main>
+        <section class="getting_started">
+            <h1 class="title">Getting Started</h1>
+            <ul>
+                <li>
+                    <i class="fa fa-sign-in"></i>
+                    <div>
+                        <p class="big_title title">Login</p>
+                        <p>Login with Lehigh account</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-search"></i>
+                    <div>
+                        <p class="big_title title">Search</p>
+                        <p>Search for textbooks or courses</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-book"></i>
+                    <div>
+                        <p class="big_title title">List</p>
+                        <p>Create a textbook listing</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
+        <hr>
 
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
+        <section class="popular_wrapper">
 
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
+            <section class="popular_textbooks">
+                <h1 class="title">Popular Textbooks</h1>
+                <ul>
+                    <li>
+                        <p class="pop_title">Fundementals of Java</p>
+                        <p>CSE 2 &amp; CSE 17</p>
+                        <span>Average: $140</span>
+                        <span>Amazon: $100</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p class="pop_title">The Theory of Computation</p>
+                        <p>CSE 318</p>
+                        <span>Average: $190</span>
+                        <span>Amazon: $195</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p class="pop_title">Introduction to Economics</p>
+                        <p>ECO 1</p>
+                        <span>Average: $230</span>
+                        <span>Amazon: $250</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p class="pop_title">Ecology: The Study of Nature</p>
+                        <p>EES 25</p>
+                        <span>Average: $80</span>
+                        <span>Amazon: $95</span>
+                    </li>
+                </ul>
+            </section>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-</div>
+            <section class="popular_courses">
+                <h1 class="title">Popular courses</h1>
+                <ul>
+                    <li>
+                        <p>CSE 303: Operating Systems</p>
+                        <span>Textbooks: 12</span>
+                        <span>Rating: 6.4/10</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p>MATH 23: Calculus III</p>
+                        <span>Textbooks: 8</span>
+                        <span>Rating: 7.6/10</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p>ECO 1: Introduction to Economics</p>
+                        <span>Textbooks: 22</span>
+                        <span>Rating: 9.1/10</span>
+                    </li>
+                    <hr class="short">
+                    <li>
+                        <p>EES 25: Living Systems</p>
+                        <span>Textbooks: 3</span>
+                        <span>Rating: 8.3/10</span>
+                    </li>
+                </ul>
+            </section>
 
+        </section>
+
+        <div style="clear: both;"></div>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2014 Sean &amp; Matt. All rights <small>(and wrongs)</small> reserved.</p>
+    </footer>
 </body>
 </html>
