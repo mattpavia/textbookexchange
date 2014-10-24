@@ -91,7 +91,7 @@
             </section>
 
             <section class="popular_courses">
-                <h1 class="title">Popular courses</h1>
+                <h1 class="title">Popular Courses</h1>
                 <ul>
                     <li>
                         <p>CSE 303: Operating Systems</p>
@@ -125,7 +125,7 @@
     </main>
 
     <footer>
-        <p>Copyright &copy; 2014 Sean &amp; Matt. All rights <small>(and wrongs)</small> reserved.</p>
+        <p>Copyright &copy; 2014 Matt &amp; Sean. All rights <small>(and wrongs)</small> reserved.</p>
     </footer>
 </body>
 </html>
