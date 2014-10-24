@@ -15,7 +15,7 @@ class Course extends CI_Model {
 		return $courses;
 	}
 
-	function getCourses($id) {
+	function getCourse($id) {
 		$this->db->select('*');
 		$this->db->from('courses');
 		$this->db->where('id', $id);
