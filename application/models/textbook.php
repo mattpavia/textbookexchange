@@ -20,8 +20,7 @@ class Textbook extends CI_Model {
 		$this->db->from('textbooks');
 		$this->db->where('id', $id);
 		
-		$query = $this->db->get();
-		return $query;
+		return $this->db->get()->result_object()[0];
 	}
 
 }

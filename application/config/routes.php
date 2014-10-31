@@ -39,6 +39,15 @@
 */
 
 $route['default_controller'] = "main";
+
+$route['textbooks'] = "textbooks";
+$route['textbooks/(:num)'] = "textbooks/lookup/$1";
+
+$route['courses'] = "courses";
+$route['courses/(:num)'] = "courses/lookup/$1";
+
+$route['about'] = "main/about";
+
 $route['404_override'] = "";
 
 

@@ -188,6 +188,36 @@ main {
 					padding: 0 10px;
 				}
 
+	.list_header {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.item_list {
+		text-align: center;
+		margin-top: 15px
+	}
+
+		.item_list_title {
+			font-size: 20px;
+		}
+
+	.single_item {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.about_title {
+		text-align: center;
+	}
+
+	.about_paragraph {
+		text-align: center;
+		margin: 0 auto;
+		width: 70%;
+		padding: 10px;
+	}
+
 footer {
 	width: 100%;
 	background-color: #34495e;
