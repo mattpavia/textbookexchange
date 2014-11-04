@@ -18,11 +18,13 @@
             </div>
         </li>
         <li>
-            <i class="fa fa-book"></i>
-            <div>
-                <p class="big_title title">List</p>
-                <p>Create a textbook listing</p>
-            </div>
+            <a href="<?php echo site_url() . "textbooks/new"; ?>">
+                <i class="fa fa-book"></i>
+                <div>
+                    <p class="big_title title">List</p>
+                    <p>Create a textbook listing</p>
+                </div>
+            </a>
         </li>
     </ul>
 </section>

@@ -41,6 +41,7 @@
 $route['default_controller'] = "main";
 
 $route['textbooks'] = "textbooks";
+$route['textbooks/new'] = "textbooks/add";
 $route['textbooks/(:num)'] = "textbooks/lookup/$1";
 
 $route['courses'] = "courses";

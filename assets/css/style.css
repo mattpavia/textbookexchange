@@ -218,6 +218,38 @@ main {
 		padding: 10px;
 	}
 
+	.textbook_form {
+		text-align: center;
+		margin: 0 auto;
+	}
+
+		.textbook_form .page_header {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+
+		.textbook_form .input input {
+			display: block;
+			margin: 0 auto;
+			padding: 5px;
+		}
+
+		.textbook_form .submit {
+			margin-top: 10px;
+		}
+
+	.list_textbook {
+		text-align: center;
+		font-size: 25px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+
+		.list_textbook i {
+			color: green;
+			font-size: 30px;
+		}
+
 footer {
 	width: 100%;
 	background-color: #34495e;
