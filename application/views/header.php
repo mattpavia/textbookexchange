@@ -20,11 +20,11 @@
     <header>
         <h1>Textbook Exchange</h1>
         <ul>
+            <?php if ($this->auth_ldap->is_authenticated()) { ?>
             <li><a href="<?php echo site_url(); ?>">Home</a></li>
             <li><a href="<?php echo site_url(); ?>textbooks">Textbooks</a></li>
             <li><a href="<?php echo site_url(); ?>courses">Courses</a></li>
             <li><a href="<?php echo site_url(); ?>about">About</a></li>
-            <?php if ($this->auth_ldap->is_authenticated()) { ?>
             <li><a href="<?php echo site_url(); ?>logout">Logout</a></li>
             <?php } ?>
         </ul>
