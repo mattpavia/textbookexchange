@@ -327,6 +327,7 @@ main {
 			margin-top: 5px;
 			font-size: 20px;
 			font-family: 'Open Sans', sans-serif;
+			box-shadow: none;
 		}
 
 		.input input[type="submit"] {
