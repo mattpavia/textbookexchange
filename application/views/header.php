@@ -26,7 +26,7 @@
             <li><a href="<?php echo site_url(); ?>textbooks">Textbooks</a></li>
             <li><a href="<?php echo site_url(); ?>courses">Courses</a></li>
             <li><a href="<?php echo site_url(); ?>about">About</a></li>
-            <li><a href="<?php echo site_url(); ?>logout">Logout</a></li>
+            <li><a href="<?php echo site_url(); ?>logout">Logout [<?php echo substr($this->session->userdata('first_name'), 0, 1) . ". " . $this->session->userdata('last_name'); ?>]</a></li>
             <?php } ?>
         </ul>
         <input type="text" placeholder="Search ISBN, Course, Author...">

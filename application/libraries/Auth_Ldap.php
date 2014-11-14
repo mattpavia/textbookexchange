@@ -105,6 +105,8 @@ class Auth_Ldap {
         // Set the session data
         $customdata = array('username' => $username,
                             'cn' => $user_info['cn'],
+                            'first_name' => $user_info['first_name'],
+                            'last_name' => $user_info['last_name'],
                             'role' => $user_info['role'],
                             'logged_in' => TRUE);
     
@@ -216,13 +218,16 @@ class Auth_Ldap {
         if (!$this->ci->user->exists($username)) {
             //user is new, create them and return new info
             $cn_new = preg_replace("/\([^)]+\)/", "", $cn);
-            preg_match('/^([a-zA-Z\. ]+) ([a-zA-Z\.]+)/', $cn_new, $fname);
-            $lname = $fname[2];
-            $fname = $fname[1];
-            $this->ci->user->create($id, $fname, $lname);
+            preg_match('/^([a-zA-Z\. ]+) ([a-zA-Z\.]+)/', $cn_new, $fullname);
+            $first_name = $fullname[1];
+            $last_name = $fullname[2];
+            $this->ci->user->create($id, $first_name, $last_name);
         }
+
+        $user = $this->ci->user->get_info($username);
         
         return array('cn' => $cn, 'dn' => $dn, 'id' => $id,
+            'first_name' => $user->first_name, 'last_name' => $user->last_name,
             'role' => $this->_get_role($get_role_arg));
     }
 
