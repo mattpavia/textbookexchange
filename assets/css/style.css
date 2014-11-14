@@ -301,7 +301,12 @@ main {
 
 	.page_header {
 		font-size: 35px;
-		margin-bottom: 10px;
+		margin-bottom: 5px;
+	}
+
+	.page_sub_header {
+		font-size: 17px;
+		margin-bottom: 15px;
 	}
 
 	.login_form {

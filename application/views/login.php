@@ -46,6 +46,7 @@ if (isset($login_error)) {
 
 <?php echo form_open('main/auth', array('class' => 'login_form')); ?>
     <div class="page_header">Please Login</div>
+    <div class="page_sub_header">You can login with your Lehigh username and password.</div>
     <div class="input">
         <?php echo form_input(array('name' => 'username', 'id' => 'username', 'placeholder' => 'Username')); ?>
         <?php echo form_password(array('name' => 'password', 'id' => 'password', 'placeholder' => 'Password')); ?>
