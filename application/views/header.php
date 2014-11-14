@@ -19,6 +19,7 @@
 
     <header>
         <h1>Textbook Exchange</h1>
+        <?php if ($this->auth_ldap->is_authenticated()) { ?>
         <ul>
             <?php if ($this->auth_ldap->is_authenticated()) { ?>
             <li><a href="<?php echo site_url(); ?>">Home</a></li>
@@ -30,6 +31,7 @@
         </ul>
         <input type="text" placeholder="Search ISBN, Course, Author...">
         <i class="fa fa-search"></i>
+        <?php } ?>
     </header>
 
     <main>
