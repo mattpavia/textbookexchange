@@ -250,6 +250,33 @@ main {
 			font-size: 30px;
 		}
 
+	.page_header {
+		font-size: 25px;
+	}
+
+	.login_form {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.form_errors {
+		text-align: center;
+		color: red;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+
+	.input {
+	}
+
+		.input input {
+			margin: 0 auto;
+			text-align: center;
+			display: block;
+			padding: 5px;
+			margin-top: 5px;
+		}
+
 footer {
 	width: 100%;
 	background-color: #34495e;

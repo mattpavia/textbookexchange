@@ -29,10 +29,13 @@ CREATE TABLE `textbooks` (
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(6) NOT NULL,
+  `first_name` varchar(250) NOT NULL,
+  `last_name` varchar(250) NOT NULL,
   `phone_number` varchar(15) NOT NULL,
   `major` varchar(100) NOT NULL,
   `grad_year` varchar(4) NOT NULL,
   `email` varchar(100) NOT NULL,
+  `access_level` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -40,6 +40,9 @@
 
 $route['default_controller'] = "main";
 
+$route['login'] = "main/login";
+$route['logout'] = "main/logout";
+
 $route['textbooks'] = "textbooks";
 $route['textbooks/new'] = "textbooks/add";
 $route['textbooks/(:num)'] = "textbooks/lookup/$1";

@@ -3,34 +3,50 @@
 class Textbooks extends CI_Controller {
 
 	public function index() {
-		$this->load->model('textbook');
-		$data['textbooks'] = $this->textbook->getTextbooks();
-		$this->load->view('textbooks', $data);
+		if ($this->auth_ldap->is_authenticated()) {
+			$this->load->model('textbook');
+			$data['textbooks'] = $this->textbook->getTextbooks();
+			$this->load->view('textbooks', $data);
+		} else {
+			redirect('login');
+		}
 	}
 
 	public function lookup($id) {
-		$this->load->model('textbook');
-		$data['textbook'] = $this->textbook->getTextbook($id);
-		$this->load->view('textbook', $data);
+		if ($this->auth_ldap->is_authenticated()) {
+			$this->load->model('textbook');
+			$data['textbook'] = $this->textbook->getTextbook($id);
+			$this->load->view('textbook', $data);
+		} else {
+			redirect('login');
+		}
 	}
 
 	public function add() {
-		$this->load->view('new_textbook');
+		if ($this->auth_ldap->is_authenticated()) {
+			$this->load->view('new_textbook');
+		} else {
+			redirect('login');
+		}
 	}
 
 	public function submit() {
-		$data = array(
-			'isbn' => $this->input->post('isbn'),
-			'author' => $this->input->post('author'),
-			'title' => $this->input->post('title'),
-			'price' => $this->input->post('price')
-		);
+		if ($this->auth_ldap->is_authenticated()) {
+			$data = array(
+				'isbn' => $this->input->post('isbn'),
+				'author' => $this->input->post('author'),
+				'title' => $this->input->post('title'),
+				'price' => $this->input->post('price')
+			);
 
-		$this->db->insert('textbooks', $data);
+			$this->db->insert('textbooks', $data);
 
-		$this->load->model('textbook');
-		$data['textbooks'] = $this->textbook->getTextbooks();
-		$this->load->view('textbooks', $data);
+			$this->load->model('textbook');
+			$data['textbooks'] = $this->textbook->getTextbooks();
+			$this->load->view('textbooks', $data);
+		} else {
+			redirect('login');
+		}
 	}
 	
 }
