@@ -39,17 +39,30 @@ a:hover {
 	/*text-decoration: underline;*/
 }
 
-.title {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-}
-
 body {
 	background-color: #ecf0f1;
 	color: #34495e;
 	/*font-family: 'Oswald', sans-serif;*/
 	font-family: 'Gentium Basic', serif;
 }
+
+.browserupgrade {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	text-align: center;
+	padding: 20px;
+	font-size: 25px;
+	background-color: #e74c3c;
+}
+
+	.browserupgrade a {
+		color: #ecf0f1;
+	}
+
+		.browserupgrade a:hover {
+			/*color: #34495e;*/
+			text-decoration: underline;
+		}
 
 header {
 	width: 100%;
