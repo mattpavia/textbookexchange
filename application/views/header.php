@@ -29,7 +29,7 @@
             <?php } ?>
         </ul>
         <input type="text" placeholder="Search ISBN, Course, Author...">
-        <a href="#"><i class="fa fa-search"></i></a>
+        <i class="fa fa-search"></i>
     </header>
 
     <main>
