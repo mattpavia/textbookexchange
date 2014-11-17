@@ -36,13 +36,11 @@ hr.short {
 
 a:hover {
 	color: #677C91;
-	/*text-decoration: underline;*/
 }
 
 body {
 	background-color: #ecf0f1;
 	color: #34495e;
-	/*font-family: 'Oswald', sans-serif;*/
 	font-family: 'Gentium Basic', serif;
 }
 
@@ -60,7 +58,6 @@ body {
 	}
 
 		.browserupgrade a:hover {
-			/*color: #34495e;*/
 			text-decoration: underline;
 		}
 
@@ -72,7 +69,6 @@ header {
 	font-weight: 800;
 	color: #34495e;
 	text-align: center;
-	padding: 10px;
 }
 
 	header h1 {
@@ -91,7 +87,7 @@ header {
 	header input {
 		width: 20%;
 		padding: 5px;
-		margin: 15px 0 5px 0;
+		margin: 15px 0 10px 0;
 		text-align: center;
 		font-size: 15px;
 		border: 1px solid #bdc3c7;
@@ -163,10 +159,6 @@ main {
 					.getting_started ul li div .big_title {
 						font-size: 27px;
 					}
-
-			/*.current_step {
-				color: #27ae60;
-			}*/
 
 			.completed {
 				position: relative;
@@ -368,7 +360,10 @@ footer {
 	font-family: 'Open Sans';
 	font-size: 15px;
 	color: #ecf0f1;
-	padding: 40px 10px;
 	text-align: center;
 	margin-top: 30px;
 }
+
+	footer p {
+		padding: 40px 10px;
+	}
