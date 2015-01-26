@@ -78,4 +78,29 @@ class User extends CI_Model {
 			return FALSE;
 		}
 	}
+
+	public function getFromTextbookId($id) {
+		$this->db->select('*');
+		$this->db->from('user_textbooks');
+		$this->db->where('textbook_id', $id);
+		
+		//return $this->db->get()->result_object()[0];
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			$user_id = $query->row()->user_id;
+			$this->db->select('*');
+			$this->db->from('users');
+			$this->db->where('id', $user_id);
+			$query = $this->db->get();
+
+			if ($query->num_rows() == 1) {
+				return $query->row();
+			} else {
+				return FALSE;
+			}
+		} else {
+			return FALSE;
+		}
+	}
 }

@@ -99,6 +99,7 @@ $route['textbooks/(:num)'] = 'textbooks/lookup/$1';
 $route['courses'] = 'courses';
 $route['courses/(:num)'] = 'courses/lookup/$1';
 
+$route['search'] = 'main/search';
 $route['about'] = 'main/about';
 
 /* End of file routes.php */

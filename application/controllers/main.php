@@ -48,13 +48,22 @@ class Main extends CI_Controller {
 			$this->load->model('course');
 			$this->load->model('textbook');
 
-			$data['courses'] = $this->course->getCourses();
-			$data['textbooks'] = $this->textbook->getTextbooks();
+			$data['courses'] = $this->course->getCourses(TRUE);
+			$data['textbooks'] = $this->textbook->getTextbooks(TRUE);
 
 			$this->load->view('main', $data);
 		} else {
 			redirect('login');
 		}
+	}
+
+	public function search() {
+		$this->load->model('textbook');
+		$this->load->model('course');
+		$name = $this->input->post('search_value');
+		$data['textbooks'] = $this->textbook->searchByName($name);
+		$data['courses'] = $this->course->searchByName($name);
+		$this->load->view('search', $data);
 	}
 
 	public function about() {

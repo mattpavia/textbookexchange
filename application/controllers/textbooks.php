@@ -57,6 +57,10 @@ class Textbooks extends CI_Controller {
 		if ($this->auth_ldap->is_authenticated()) {
 			$this->load->model('textbook');
 			$data['textbook'] = $this->textbook->getTextbook($id);
+
+			$this->load->model('user');
+			$data['user'] = $this->user->getFromTextbookId($id);
+
 			$this->load->view('textbook', $data);
 		} else {
 			redirect('login');
@@ -81,6 +85,14 @@ class Textbooks extends CI_Controller {
 			);
 
 			$this->db->insert('textbooks', $data);
+
+			$textbook_id = $this->db->insert_id();
+
+			$this->load->model('user');
+			$user_info = $this->user->get_info($this->session->userdata('username'));
+			$user_id = $user_info->id;
+
+			$this->db->insert('user_textbooks', array('user_id' => $user_id, 'textbook_id' => $textbook_id));
 
 			$this->load->model('textbook');
 			$data['textbooks'] = $this->textbook->getTextbooks();

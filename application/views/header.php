@@ -29,8 +29,11 @@
             <li><a href="<?php echo site_url(); ?>logout">Logout [<?php echo substr($this->session->userdata('first_name'), 0, 1) . ". " . $this->session->userdata('last_name'); ?>]</a></li>
             <?php } ?>
         </ul>
-        <input type="text" placeholder="Search ISBN, Course, Author...">
-        <i class="fa fa-search"></i>
+
+        <?php echo form_open('search', array('name' => 'search_form')); ?>
+        <input type="text" name="search_value" placeholder="Search ISBN, Course, Author...">
+        <a href="#" onclick="document.search_form.submit(); return false;"><i class="fa fa-search"></i></a>
+        </form>
         <?php } ?>
     </header>
 

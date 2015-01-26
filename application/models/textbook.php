@@ -43,8 +43,11 @@ class Textbook extends CI_Model {
 		parent::__construct();
 	}
 
-	public function getTextbooks() {
+	public function getTextbooks($limit = FALSE) {
 		$query = $this->db->get('textbooks');
+		if ($limit) {
+			$query = $this->db->get('textbooks', 10);
+		}
 		$textbooks = array();
 		foreach ($query->result() as $row) {
 			$textbooks[] = $row;
@@ -65,5 +68,30 @@ class Textbook extends CI_Model {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function getTextbookFromIsbn($isbn) {
+		$this->db->select('*');
+		$this->db->from('textbooks');
+		$this->db->where('isbn', $isbn);
+		
+		//return $this->db->get()->result_object()[0];
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			return $query->row();
+		} else {
+			return FALSE;
+		}
+	}
+
+	public function searchByName($name) {
+		$this->db->select('*');
+		$this->db->from('textbooks');
+		$this->db->like('title', $name);
+
+		$query = $this->db->get();
+
+		return $query->result();
 	}
 }

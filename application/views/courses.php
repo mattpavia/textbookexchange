@@ -6,7 +6,6 @@
     <li>
         <div class="item_list_title"><a href="<?php echo site_url() . "courses/" . $course->id; ?>"><?php echo strtoupper($course->department) . " " . $course->course_number . ": " . $course->name; ?></a></div>
         <div>Professor: <?php echo $course->professor; ?></div>
-        <div>Avg Rating: n/a</div>
     </li>
     <hr class="short">
     <?php } ?>

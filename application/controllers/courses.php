@@ -57,6 +57,10 @@ class Courses extends CI_Controller {
 		if ($this->auth_ldap->is_authenticated()) {
 			$this->load->model('course');
 			$data['course'] = $this->course->getCourse($id);
+
+			$this->load->model('textbook');
+			$data['textbook'] = $this->textbook->getTextbookFromIsbn($data['course']->isbn);
+
 			$this->load->view('course', $data);
 		} else {
 			redirect('login');
