@@ -283,6 +283,11 @@ switch (ENVIRONMENT)
 	define('VIEWPATH', $view_folder);
 
 /*
+ * REQUIRE COMPOSER AUTOLOAD
+ */
+require 'vendor/autoload.php';
+
+/*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
  * --------------------------------------------------------------------

@@ -12,4 +12,6 @@ user_guide_src/
 /vendor/
 /nbproject/
 
+tests/
+
 php_errors.log
