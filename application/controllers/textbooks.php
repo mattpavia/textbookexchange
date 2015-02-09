@@ -37,6 +37,13 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+require_once "vendor/autoload.php";
+
+use ApaiIO\Configuration\GenericConfiguration;
+use ApaiIO\Operations\Search;
+use ApaiIO\Operations\Lookup;
+use ApaiIO\ApaiIO;
+
 class Textbooks extends CI_Controller {
 
 	public function __construct() {
@@ -47,6 +54,7 @@ class Textbooks extends CI_Controller {
 		if ($this->auth_ldap->is_authenticated()) {
 			$this->load->model('textbook');
 			$data['textbooks'] = $this->textbook->getTextbooks();
+
 			$this->load->view('textbooks', $data);
 		} else {
 			redirect('login');
@@ -60,6 +68,42 @@ class Textbooks extends CI_Controller {
 
 			$this->load->model('user');
 			$data['user'] = $this->user->getFromTextbookId($id);
+
+			$conf = new GenericConfiguration();
+			$conf
+			    ->setCountry('com')
+			    ->setAccessKey('AKIAI22444MPW7634WLQ')
+			    ->setSecretKey('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')
+			    ->setAssociateTag('lehitextexch-20')
+			    ->setRequest('\ApaiIO\Request\Soap\Request')
+	    		->setResponseTransformer('\ApaiIO\ResponseTransformer\ObjectToArray');
+
+	    	$apaiIO = new ApaiIO($conf);
+
+	    	$isbn = $data['textbook']->isbn;
+
+			$search = new Search();
+			$search->setCategory('Books');
+			$search->setKeywords($isbn);
+
+			$response = $apaiIO->runOperation($search);
+
+			if (!isset($response['Items']['Item']['ASIN'])) {
+				$asin = $response['Items']['Item'][0]['ASIN'];
+			} else {
+				$asin = $response['Items']['Item']['ASIN'];
+			}
+
+			$lookup = new Lookup();
+			$lookup->setItemId($asin);
+			$lookup->setResponseGroup(array('Large'));
+
+			$response = $apaiIO->runOperation($lookup);
+
+			$data['image_url'] = $response['Items']['Item']['LargeImage']['URL'];
+			$data['list_price'] = $response['Items']['Item']['ItemAttributes']['ListPrice']['FormattedPrice'];
+			$data['lowest_new_price'] = $response['Items']['Item']['OfferSummary']['LowestNewPrice']['FormattedPrice'];
+			$data['lowest_used_price'] = $response['Items']['Item']['OfferSummary']['LowestUsedPrice']['FormattedPrice'];
 
 			$this->load->view('textbook', $data);
 		} else {
