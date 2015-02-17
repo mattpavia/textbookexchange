@@ -5,10 +5,10 @@
 	"require": {
 		"php": ">=5.2.4"
 	},
-	"require-dev": {
-		"exeu/apai-io": "dev-master"
-	},
 	"config": {
 		"vendor-dir": "application/vendor"
+	},
+	"require-dev": {
+		"exeu/apai-io": "dev-master"
 	}
 }
