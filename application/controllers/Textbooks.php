@@ -37,8 +37,6 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require_once "vendor/autoload.php";
-
 use ApaiIO\Configuration\GenericConfiguration;
 use ApaiIO\Operations\Search;
 use ApaiIO\Operations\Lookup;

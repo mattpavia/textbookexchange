@@ -10,6 +10,7 @@ application/logs/*
 
 user_guide_src/
 /vendor/
+*/vendor/
 /nbproject/
 
 tests/
