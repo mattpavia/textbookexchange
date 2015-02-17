@@ -21,6 +21,7 @@ CREATE TABLE `textbooks` (
   `author` varchar(100) NOT NULL,
   `title` varchar(100) NOT NULL,
   `price` double NOT NULL,
+  `image` varchar(250) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
