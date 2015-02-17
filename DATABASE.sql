@@ -8,6 +8,7 @@ CREATE TABLE `courses` (
   `course_number` varchar(3) NOT NULL,
   `name` varchar(100) NOT NULL,
   `professor` varchar(100) NOT NULL,
+  `isbn` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
