@@ -60,26 +60,27 @@ class User extends CI_Model {
 		return FALSE;
 	}
 
-	public function exists($username) {
+	public function exists($email) {
 		$this->db->select('*');
 		$this->db->from('users');
-		$this->db->where('username', $username);
+		$this->db->where('email', $email);
 		
 		$query = $this->db->get();
 
 		return $query->num_rows() > 0;
 	}
 
-	public function create($username, $first_name, $last_name, $role = 1) {
+	public function create($email) {
+		$key = crypt($email);
+
 		$data = array(
-			'username' => $username,
-			'first_name' => $first_name,
-			'last_name' => $last_name,
-			'email' => $username . "@lehigh.edu",
-			'access_level' => $role
+			'email' => $email,
+			'registration_key' => $key
 		);
 
 		$this->db->insert('users', $data);
+
+		return $key;
 	}
 
 	public function get_info($username) {

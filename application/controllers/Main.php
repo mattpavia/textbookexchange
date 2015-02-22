@@ -109,6 +109,33 @@ class Main extends CI_Controller {
 		$this->load->view('register');
 	}
 
+	public function create() {
+		$this->load->model('user');
+
+		$this->load->library('email');
+
+		$email = $this->input->post('email');
+
+		//if (!$this->user->exists($email)) {
+
+			$key = $this->user->create($email);
+
+			$this->email->from('register@textbookexchange.com', 'Textbook Exchange');
+			$this->email->to($email);
+
+			$this->email->subject('Registratrion verification');
+			$this->email->message('<a href="' . site_url('register/' . $key) . '">Click here</a> to finish registering.');
+
+			if ($this->email->send()) {
+				echo "email sent to " . $email;
+			} else {
+				echo $this->email->print_debugger();
+			}
+		// } else {
+		// 	echo "email exists";
+		// }
+	}
+
 	public function logout() {
 		$this->session->unset_userdata(array(
 			'user_id' => $user->id,
