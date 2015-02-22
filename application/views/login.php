@@ -46,12 +46,18 @@ if (isset($login_error)) {
 
 <?php echo form_open('main/auth', array('class' => 'login_form')); ?>
     <div class="page_header">Please Login</div>
-    <div class="page_sub_header">You can login with your Lehigh portal username and password.</div>
     <div class="input">
-        <?php echo form_input(array('name' => 'username', 'id' => 'username', 'placeholder' => 'Username')); ?>
+        <?php echo form_input(array('name' => 'email', 'id' => 'email', 'placeholder' => 'Email')); ?>
         <?php echo form_password(array('name' => 'password', 'id' => 'password', 'placeholder' => 'Password')); ?>
         <?php echo form_submit(array('name' => 'submit', 'value' => 'Login', 'class' => 'submit')); ?>
     </div>
 <?php echo form_close(); ?>
+
+<hr>
+
+<div class="register_link">
+    <h3>Don't have an account?</h3>
+    <a href="<?php echo site_url('register') ?>">Create one!</a>
+</div>
 
 <?php $this->load->view('footer'); ?>

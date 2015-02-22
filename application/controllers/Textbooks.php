@@ -49,7 +49,7 @@ class Textbooks extends CI_Controller {
 	}
 
 	public function index() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->model('textbook');
 			$data['textbooks'] = $this->textbook->getTextbooks();
 
@@ -60,7 +60,7 @@ class Textbooks extends CI_Controller {
 	}
 
 	public function lookup($id) {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->model('textbook');
 			$data['textbook'] = $this->textbook->getTextbook($id);
 
@@ -110,7 +110,7 @@ class Textbooks extends CI_Controller {
 	}
 
 	public function add() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->view('new_textbook');
 		} else {
 			redirect('login');
@@ -118,7 +118,7 @@ class Textbooks extends CI_Controller {
 	}
 
 	public function submit() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$data = array(
 				'isbn' => $this->input->post('isbn'),
 				'author' => $this->input->post('author'),

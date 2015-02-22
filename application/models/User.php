@@ -43,6 +43,23 @@ class User extends CI_Model {
 		parent::__construct();
 	}
 
+	public function login($email, $password) {
+		$this->db->select(array('id', 'email', 'password'));
+		$this->db->from('users');
+		$this->db->where('email', $email);
+
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			$row = $query->row();
+			if (crypt($password, $row->password) == $row->password) {
+				return $row;
+			}
+		}
+
+		return FALSE;
+	}
+
 	public function exists($username) {
 		$this->db->select('*');
 		$this->db->from('users');

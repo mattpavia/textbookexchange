@@ -292,6 +292,36 @@ main {
 			margin-top: 10px;
 		}
 
+	.register_link {
+		text-align: center;
+		margin-top: 30px;
+	}
+
+		.register_link h3 {
+			font-size: 30px;
+			margin-bottom: 15px;
+		}
+
+		.register_link a {
+			background-color: #34495e;
+			color: #ecf0f1;
+			padding: 10px 20px;
+			margin-top: 10px;
+			border: none;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+			.register_link a:hover {
+				cursor: pointer;
+				background-color: #3d566e;
+			}
+
+	.register_header {
+		text-align: center;
+		font-size: 30px;
+		margin-top: 40px;
+	}
+
 	.list_textbook {
 		text-align: center;
 		font-size: 25px;

@@ -44,7 +44,7 @@ class Courses extends CI_Controller {
 	}
 
 	public function index() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->model('course');
 			$data['courses'] = $this->course->getCourses();
 			$this->load->view('courses', $data);
@@ -54,7 +54,7 @@ class Courses extends CI_Controller {
 	}
 
 	public function lookup($id) {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->model('course');
 			$data['course'] = $this->course->getCourse($id);
 

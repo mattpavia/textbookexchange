@@ -44,7 +44,7 @@ class Main extends CI_Controller {
 	}
 
 	public function index() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->model('course');
 			$this->load->model('textbook');
 
@@ -67,7 +67,7 @@ class Main extends CI_Controller {
 	}
 
 	public function about() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			$this->load->view('about');
 		} else {
 			redirect('login');
@@ -75,7 +75,7 @@ class Main extends CI_Controller {
 	}
 
 	public function login() {
-		if ($this->auth_ldap->is_authenticated()) {
+		if ($this->session->userdata('user_id')) {
 			redirect(site_url());
 		} else {
 			$this->load->view('login');
@@ -84,25 +84,37 @@ class Main extends CI_Controller {
 
 	public function auth() {
 		$this->load->library('Form_validation');
+		$this->load->model('user');
 
-		$this->form_validation->set_rules('username', 'Username', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
 		if ($this->form_validation->run()) {
-			if ($this->auth_ldap->login($this->form_validation->set_value('username'), $this->form_validation->set_value('password'))) {
+			$user = $this->user->login($this->form_validation->set_value('email'), $this->form_validation->set_value('password'));
+			if ($user) {
+				$this->session->set_userdata(array(
+					'user_id' => $user->id,
+					'email' => $user->email
+				));
 				redirect(site_url());
 			} else {
-				$this->load->view('login', array("login_error" => "Incorrect username and password combination."));
+				$this->load->view('login', array("login_error" => "Incorrect email and password combination."));
 			}
 		} else {
 			$this->load->view('login');
 		}
 	}
 
+	public function register() {
+		$this->load->view('register');
+	}
+
 	public function logout() {
-        if ($this->auth_ldap->is_authenticated()) {
-            $this->auth_ldap->logout();
-        }
+		$this->session->unset_userdata(array(
+			'user_id' => $user->id,
+			'email' => $user->email
+		));
+		$this->session->sess_destroy();
 
         redirect('login');
     }
