@@ -91,7 +91,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['login'] = 'main/login';
 $route['logout'] = 'main/logout';
+
 $route['register'] = 'main/register';
+$route['register/(:any)'] = 'main/final_register/$1';
 
 $route['textbooks'] = 'textbooks';
 $route['textbooks/new'] = 'textbooks/add';

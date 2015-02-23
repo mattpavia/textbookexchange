@@ -71,7 +71,7 @@ class User extends CI_Model {
 	}
 
 	public function create($email) {
-		$key = crypt($email);
+		$key = str_replace("=", "", base64_encode($email));
 
 		$data = array(
 			'email' => $email,
@@ -95,6 +95,27 @@ class User extends CI_Model {
 		} else {
 			return FALSE;
 		}
+	}
+
+	public function get_from_reg_key($key) {
+		$this->db->select('*');
+		$this->db->from('users');
+		$this->db->where('registration_key', $key);
+		
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			return $query->row();
+		} else {
+			return FALSE;
+		}
+	}
+
+	public function update_password($email, $password) {
+		$this->db->where('email', $email);
+		$this->db->update('users', array(
+			'password' => $password
+		));
 	}
 
 	public function getFromTextbookId($id) {

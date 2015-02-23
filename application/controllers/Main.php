@@ -112,28 +112,54 @@ class Main extends CI_Controller {
 	public function create() {
 		$this->load->model('user');
 
-		$this->load->library('email');
+		$config = array(
+			'mailtype' => 'html'
+		);
+
+		$this->load->library('email', $config);
 
 		$email = $this->input->post('email');
 
-		//if (!$this->user->exists($email)) {
-
-			$key = $this->user->create($email);
-
-			$this->email->from('register@textbookexchange.com', 'Textbook Exchange');
-			$this->email->to($email);
-
-			$this->email->subject('Registratrion verification');
-			$this->email->message('<a href="' . site_url('register/' . $key) . '">Click here</a> to finish registering.');
-
-			if ($this->email->send()) {
-				echo "email sent to " . $email;
+		if (!$this->user->exists($email)) {
+			if (strtolower(substr($email, -10)) != "lehigh.edu") {
+				echo "Not a valid Lehigh email";
 			} else {
-				echo $this->email->print_debugger();
+				$key = $this->user->create($email);
+
+				$this->email->from('register@textbookexchange.com', 'Textbook Exchange');
+				$this->email->to($email);
+
+				$this->email->subject('Registratrion verification');
+				$this->email->message('<a href="' . site_url('register/' . $key) . '">Click here</a> to finish registering.');
+
+				if ($this->email->send()) {
+					echo "email sent to " . $email;
+				} else {
+					echo $this->email->print_debugger();
+				}
 			}
-		// } else {
-		// 	echo "email exists";
-		// }
+		} else {
+			echo "email exists";
+		}
+	}
+
+	public function final_register($key) {
+		$this->load->model('user');
+		
+		$data['user'] = $this->user->get_from_reg_key($key);
+		
+		$this->load->view('final_register', $data);
+	}
+
+	public function update() {
+		$this->load->model('user');
+
+		$password = crypt($this->input->post('password'));
+		$email = $this->input->post('email');
+
+		$this->user->update_password($email, $password);
+
+		redirect(site_url());
 	}
 
 	public function logout() {
