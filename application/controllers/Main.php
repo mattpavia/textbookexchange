@@ -121,9 +121,9 @@ class Main extends CI_Controller {
 		$email = $this->input->post('email');
 
 		if (!$this->user->exists($email)) {
-			if (strtolower(substr($email, -10)) != "lehigh.edu") {
-				echo "Not a valid Lehigh email";
-			} else {
+			// if (strtolower(substr($email, -10)) != "lehigh.edu") {
+			// 	echo "Not a valid Lehigh email";
+			// } else {
 				$key = $this->user->create($email);
 
 				$this->email->from('register@textbookexchange.com', 'Textbook Exchange');
@@ -137,7 +137,7 @@ class Main extends CI_Controller {
 				} else {
 					echo $this->email->print_debugger();
 				}
-			}
+			// }
 		} else {
 			echo "email exists";
 		}
