@@ -81,6 +81,7 @@ class Course extends CI_Model {
 			$this->db->like('department', $name_array[0]);
 			$this->db->or_like('course_number', $name_array[0]);
 		}
+		$this->db->or_like('name', $name);
 
 		$query = $this->db->get();
 
