@@ -1,14 +1,17 @@
 <?php $this->load->view('header'); ?>
 
 <h1 class="list_header">All Courses</h1>
-<ul class="item_list">
+<table class="item_list">
+	<tr class="table_head">
+	<td>Name</td>
+	<td>Professor</td>
+	</tr>
     <?php foreach($courses as $course) { ?>
-    <li>
-        <div class="item_list_title"><a href="<?php echo site_url() . "courses/" . $course->id; ?>"><?php echo strtoupper($course->department) . " " . $course->course_number . ": " . $course->name; ?></a></div>
-        <div>Professor: <?php echo $course->professor; ?></div>
-    </li>
-    <hr class="short">
+    <tr>
+        <td class="table_title"><a href="<?php echo site_url() . "courses/" . $course->id; ?>"><?php echo strtoupper($course->department) . " " . $course->course_number . ": " . $course->name; ?></a></td>
+        <td><?php echo $course->professor; ?></td>
+    </tr>
     <?php } ?>
-</ul>
+</table>
     
 <?php $this->load->view('footer'); ?>

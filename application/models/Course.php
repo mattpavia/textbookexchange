@@ -74,10 +74,13 @@ class Course extends CI_Model {
 		$name_array = explode(' ', $name);
 		$this->db->select('*');
 		$this->db->from('courses');
-		$this->db->like('department', $name_array[0]);
-		$this->db->like('course_number', $name_array[1]);
-		//$this->db->like('name', $name);
-		//$this->db->like('professor', $name);
+		if (count($name_array) >= 2) {
+			$this->db->like('department', $name_array[0]);
+			$this->db->like('course_number', $name_array[1]);
+		} else {
+			$this->db->like('department', $name_array[0]);
+			$this->db->or_like('course_number', $name_array[0]);
+		}
 
 		$query = $this->db->get();
 

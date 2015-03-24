@@ -37,6 +37,11 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+use ApaiIO\Configuration\GenericConfiguration;
+use ApaiIO\Operations\Search;
+use ApaiIO\Operations\Lookup;
+use ApaiIO\ApaiIO;
+
 class Courses extends CI_Controller {
 
 	public function __construct() {
@@ -60,6 +65,39 @@ class Courses extends CI_Controller {
 
 			$this->load->model('textbook');
 			$data['textbook'] = $this->textbook->getTextbookFromIsbn($data['course']->isbn);
+
+			$conf = new GenericConfiguration();
+			$conf
+			    ->setCountry('com')
+			    ->setAccessKey('AKIAI22444MPW7634WLQ')
+			    ->setSecretKey('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')
+			    ->setAssociateTag('lehitextexch-20')
+			    ->setRequest('\ApaiIO\Request\Soap\Request')
+	    		->setResponseTransformer('\ApaiIO\ResponseTransformer\ObjectToArray');
+
+	    	$apaiIO = new ApaiIO($conf);
+
+	    	$isbn = $data['textbook']->isbn;
+
+			$search = new Search();
+			$search->setCategory('Books');
+			$search->setKeywords($isbn);
+
+			$response = $apaiIO->runOperation($search);
+
+			if (!isset($response['Items']['Item']['ASIN'])) {
+				$asin = $response['Items']['Item'][0]['ASIN'];
+			} else {
+				$asin = $response['Items']['Item']['ASIN'];
+			}
+
+			$lookup = new Lookup();
+			$lookup->setItemId($asin);
+			$lookup->setResponseGroup(array('Large'));
+
+			$response = $apaiIO->runOperation($lookup);
+
+			$data['image_url'] = $response['Items']['Item']['LargeImage']['URL'];
 
 			$this->load->view('course', $data);
 		} else {

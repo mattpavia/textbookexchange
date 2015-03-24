@@ -89,6 +89,8 @@ class Textbook extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('textbooks');
 		$this->db->like('title', $name);
+		$this->db->or_like('isbn', $name);
+		$this->db->or_like('author', $name);
 
 		$query = $this->db->get();
 

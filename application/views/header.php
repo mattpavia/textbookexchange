@@ -29,7 +29,7 @@
         </ul>
 
         <?php echo form_open('search', array('name' => 'search_form')); ?>
-        <input type="text" name="search_value" placeholder="Search ISBN, Course, Author...">
+        <input type="text" name="search_value" placeholder="Search ISBN, Textbook Name, Course">
         <a href="#" onclick="document.search_form.submit(); return false;"><i class="fa fa-search"></i></a>
         </form>
         <?php } ?>

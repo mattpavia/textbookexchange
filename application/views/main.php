@@ -44,7 +44,8 @@
             <?php foreach($textbooks as $textbook) { ?>
             <li>
                 <p class="pop_title"><a href="<?php echo site_url() . "textbooks/" . $textbook->id; ?>"><?php echo $textbook->title; ?></a></p>
-                <span>Bookstore: <?php echo "$" . $textbook->price; ?></span>
+                <span>Price: <?php echo "$" . $textbook->price; ?></span>
+                <span>Author: <?php echo $textbook->author; ?></span>
                 <!-- <span>Amazon: n/a</span> -->
             </li>
             <hr class="short">

@@ -32,10 +32,16 @@ hr.short {
 	height: 1px;
 	margin: 15px auto;
 	width: 300px;
+
+	/*text-align: left;*/
 }
 
 a:hover {
 	color: #677C91;
+}
+
+.clear {
+	clear: both;
 }
 
 body {
@@ -88,7 +94,7 @@ header {
 		width: 20%;
 		padding: 5px;
 		margin: 15px 0 10px 0;
-		text-align: center;
+		text-align: left;
 		font-size: 15px;
 		border: 1px solid #bdc3c7;
 	}
@@ -204,14 +210,22 @@ main {
 			width: 50%;
 			float: left;
 			margin: 0 auto;
-			text-align: center;
+			/*text-align: center;*/
 			margin-top: 15px;
 		}
+
+			.popular_textbooks ul .short {
+				margin-left: 0;
+			}
 
 			.popular_textbooks h1 {
 				font-size: 35px;
 				margin-bottom: 20px;
 			}
+
+				.popular_textbooks ul li {
+					text-align: left;
+				}
 
 				.popular_textbooks ul li .pop_title {
 					font-size: 20px;
@@ -225,7 +239,7 @@ main {
 			width: 50%;
 			float: left;
 			margin: 0 auto;
-			text-align: center;
+			/*text-align: center;*/
 			margin-top: 15px;
 		}
 
@@ -233,6 +247,14 @@ main {
 				font-size: 35px;
 				margin-bottom: 20px;
 			}
+
+				.popular_courses ul .short {
+					margin-left: 0;
+				}
+
+				.popular_courses ul li {
+					text-align: left;
+				}
 
 				.popular_courses ul li p {
 					font-size: 20px;
@@ -248,18 +270,60 @@ main {
 	}
 
 	.item_list {
-		text-align: center;
-		margin-top: 15px
+		text-align: left;
+		margin: 0 auto;
+		margin-top: 15px;
+		width: 70%;
 	}
 
-		.item_list_title {
-			font-size: 20px;
+		.table_head {
+			font-size: 23px;
+			font-weight: bold;
 		}
+
+		.table_title {
+			font-size: 19px;
+		}
+
+		.item_list tr td {
+			padding: 10px 0;
+		}
+
+		.item_list_title {
+			font-size: 23px;
+		}
+
+
 
 	.single_item {
 		text-align: center;
+		margin: 0 auto;
 		margin-top: 20px;
+		width: 80%;
 	}
+
+		.item_wrapper {
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+
+		.item_left {
+			width: 45%;
+			float: left;
+			text-align: right;
+		}
+
+		.item_right {
+			width: 50%;
+			float: left;
+			text-align: left;
+			padding-left: 20px;
+		}
+
+			.item_right p {
+				margin-bottom: 10px;
+				font-size: 19px;
+			}
 
 	.about_title {
 		text-align: center;
