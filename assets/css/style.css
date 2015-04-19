@@ -204,6 +204,7 @@ main {
 	.popular_wrapper {
 		width: 80%;
 		margin: 0 auto;
+		margin-left: 21%;
 	}
 
 		.popular_textbooks {
