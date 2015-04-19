@@ -126,7 +126,7 @@ class Main extends CI_Controller {
 			// } else {
 				$key = $this->user->create($email);
 
-				$this->email->from('register@textbookexchange.com', 'Textbook Exchange');
+				$this->email->from('matt.pavia@gmail.com', 'Textbook Exchange');
 				$this->email->to($email);
 
 				$this->email->subject('Registratrion verification');
