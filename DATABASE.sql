@@ -13,6 +13,17 @@ CREATE TABLE `courses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Table structure for table `listed_textbooks`
+--
+
+CREATE TABLE IF NOT EXISTS `listed_textbooks` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `textbook_id` int(10) unsigned NOT NULL,
+  `user_price` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Table structure for table `textbooks`
 --
 CREATE TABLE `textbooks` (

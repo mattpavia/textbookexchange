@@ -162,7 +162,9 @@ class Main extends CI_Controller {
 
 		$this->user->update_password($email, $password);
 
-		redirect(site_url());
+		$this->session->set_flashdata('success_flash', 'Registration successful. Please login.');
+
+		redirect('/');
 	}
 
 	public function logout() {
