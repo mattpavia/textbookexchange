@@ -375,17 +375,15 @@ main {
 			font-size: 18px;
 			font-style: italic;
 			margin-top: 10px;
+			text-align: center;
 		}
 
-	.about_title {
+	.user_title {
 		text-align: center;
 	}
 
-	.about_paragraph {
-		text-align: center;
-		margin: 0 auto;
-		width: 70%;
-		padding: 10px;
+	.delete_textbook_icon i {
+		font-size: 20px;
 	}
 
 	.textbook_form {

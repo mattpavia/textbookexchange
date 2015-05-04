@@ -146,4 +146,16 @@ class Textbooks extends CI_Controller {
 			redirect('login');
 		}
 	}
+
+	public function delete($id) {
+		$this->load->model('textbook');
+
+		if ($this->textbook->delete($id)) {
+			$this->session->set_flashdata('success_flash', 'Textbook deleted.');
+		} else {
+			$this->session->set_flashdata('fail_flash', 'Error deleting textbook.');
+		}
+
+		redirect('user');
+	}
 }

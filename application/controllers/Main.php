@@ -66,9 +66,11 @@ class Main extends CI_Controller {
 		$this->load->view('search', $data);
 	}
 
-	public function about() {
+	public function user() {
 		if ($this->session->userdata('user_id')) {
-			$this->load->view('about');
+			$this->load->model('textbook');
+			$data['textbooks'] = $this->textbook->getListedTextbooksForId($this->session->userdata('user_id'));
+			$this->load->view('user', $data);
 		} else {
 			redirect('login');
 		}

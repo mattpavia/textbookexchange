@@ -99,11 +99,13 @@ $route['textbooks'] = 'textbooks';
 $route['textbooks/new'] = 'textbooks/add';
 $route['textbooks/(:num)'] = 'textbooks/lookup/$1';
 
+$route['delete_textbook/(:num)'] = 'textbooks/delete/$1';
+
 $route['courses'] = 'courses';
 $route['courses/(:num)'] = 'courses/lookup/$1';
 
 $route['search'] = 'main/search';
-$route['about'] = 'main/about';
+$route['user'] = 'main/user';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
