@@ -350,6 +350,10 @@ main {
 			text-align: right;
 		}
 
+		.book_not_found i {
+			font-size: 150px;
+		}
+
 		.item_right {
 			width: 50%;
 			float: left;
@@ -365,6 +369,12 @@ main {
 		.mid_page_title {
 			font-size: 23px;
 			margin-top: 20px;
+		}
+
+		.no_data_for_table {
+			font-size: 18px;
+			font-style: italic;
+			margin-top: 10px;
 		}
 
 	.about_title {
