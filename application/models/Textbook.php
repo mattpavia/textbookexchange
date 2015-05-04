@@ -70,6 +70,11 @@ class Textbook extends CI_Model {
 		}
 	}
 
+	public function getListedTextbooks($id) {
+		$query = $this->db->query("SELECT * FROM listed_textbooks LEFT JOIN textbooks ON textbooks.id = listed_textbooks.textbook_id LEFT JOIN user_textbooks ON listed_textbooks.id = user_textbooks.textbook_id LEFT JOIN users ON user_textbooks.user_id = users.id WHERE listed_textbooks.textbook_id = " . $id);
+		return $query->result();
+	}
+
 	public function getTextbookFromIsbn($isbn) {
 		$this->db->select('*');
 		$this->db->from('textbooks');

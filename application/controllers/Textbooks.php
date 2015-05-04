@@ -63,6 +63,7 @@ class Textbooks extends CI_Controller {
 		if ($this->session->userdata('user_id')) {
 			$this->load->model('textbook');
 			$data['textbook'] = $this->textbook->getTextbook($id);
+			$data['listed_textbooks'] = $this->textbook->getListedTextbooks($id);
 
 			$this->load->model('user');
 			$data['user'] = $this->user->getFromTextbookId($id);
@@ -119,26 +120,28 @@ class Textbooks extends CI_Controller {
 
 	public function submit() {
 		if ($this->session->userdata('user_id')) {
+
+			$this->db->select('id');
+			$this->db->from('textbooks');
+			$this->db->where('isbn', $this->input->post('isbn'));
+			$bookstore_textbook_id = $this->db->get()->row()->id;
+
+
 			$data = array(
-				'isbn' => $this->input->post('isbn'),
-				'author' => $this->input->post('author'),
-				'title' => $this->input->post('title'),
-				'price' => $this->input->post('price')
+				'textbook_id' => $bookstore_textbook_id,
+				'user_price' => $this->input->post('price')
 			);
 
-			$this->db->insert('textbooks', $data);
+			$this->db->insert('listed_textbooks', $data);
 
 			$textbook_id = $this->db->insert_id();
 
 			$this->load->model('user');
-			$user_info = $this->user->get_info($this->session->userdata('username'));
-			$user_id = $user_info->id;
+			$user_id = $this->session->userdata('user_id');
 
 			$this->db->insert('user_textbooks', array('user_id' => $user_id, 'textbook_id' => $textbook_id));
 
-			$this->load->model('textbook');
-			$data['textbooks'] = $this->textbook->getTextbooks();
-			$this->load->view('textbooks', $data);
+			redirect('textbooks/' . $bookstore_textbook_id);
 		} else {
 			redirect('login');
 		}

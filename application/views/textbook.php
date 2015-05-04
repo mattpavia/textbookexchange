@@ -6,17 +6,27 @@
 		<div class="item_left"><img src="<?php echo $image_url; ?>"></div>
 		<div class="item_right">
 			<p>Author: <?php echo $textbook->author; ?></p>
-			<p>User Price: <?php echo "$" . $textbook->price; ?></p>
+			<p>ISBN: <?php echo $textbook->isbn; ?></p>
+			<p>Bookstore Price: <?php echo "$" . $textbook->price; ?></p>
 			<p>Amazon List Price: <?php echo $list_price; ?></p>
 			<p>Amazon Lowest New Price: <?php echo $lowest_new_price; ?></p>
 			<p>Amazon Lowest Used Price: <?php echo $lowest_used_price; ?></p>
 		</div>
 	</div>
 	<div class="clear"></div>
-	<?php if ($user) { ?>
-	<div>User: <?php echo $user->first_name . $user->last_name; ?></div>
-	<div>Email: <a href="mailto:<?php echo $user->username . "@lehigh.edu"; ?>"><?php echo $user->username . "@lehigh.edu"; ?></a></div>
-	<?php } ?>
+	<div class="mid_page_title">Student Listed Texbooks</div>
+	<table class="item_list">
+		<tr class="table_head">
+		<td>User</td>
+		<td>Price</td>
+		</tr>
+	    <?php foreach($listed_textbooks as $textbook) { ?>
+	    <tr>
+	        <td><a href="mailto:<?php echo $textbook->email; ?>"><?php echo $textbook->email; ?></a></td>
+	        <td><?php echo "$" . $textbook->user_price; ?></td>
+	    </tr>
+	    <?php } ?>
+	</table>
 </div>
     
 <?php $this->load->view('footer'); ?>

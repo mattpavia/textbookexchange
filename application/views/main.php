@@ -15,21 +15,21 @@
             <i class="fa fa-long-arrow-right"></i>
         </li>
         <li>
-            <i class="fa fa-search"></i>
+            <a href="#" class="search_header_button"><i class="fa fa-search"></i>
             <div>
                 <p class="big_title title">Search</p>
                 <p>Search for textbooks or courses</p>
-            </div>
+            </div></a>
         </li>
         <li class="arrow">
             <i class="fa fa-long-arrow-right"></i>
         </li>
         <li>
-            <i class="fa fa-book"></i>
+            <a href="<?php echo site_url('textbooks/new'); ?>"><i class="fa fa-book"></i>
             <div>
                 <p class="big_title title">List</p>
                 <p>Create a textbook listing</p>
-            </div>
+            </div></a>
         </li>
     </ul>
 </section>

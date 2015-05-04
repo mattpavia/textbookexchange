@@ -121,9 +121,9 @@ class Main extends CI_Controller {
 		$email = $this->input->post('email');
 
 		if (!$this->user->exists($email)) {
-			// if (strtolower(substr($email, -10)) != "lehigh.edu") {
-			// 	echo "Not a valid Lehigh email";
-			// } else {
+			if (strtolower(substr($email, -10)) != "lehigh.edu") {
+				$this->session->set_flashdata('fail_flash', 'Not a valid Lehigh email address.');
+			} else {
 				$key = $this->user->create($email);
 
 				$this->email->from('register@textbookexchange.us', 'Textbook Exchange');
@@ -133,14 +133,17 @@ class Main extends CI_Controller {
 				$this->email->message('<a href="' . site_url('register/' . $key) . '">Click here</a> to finish registering.');
 
 				if ($this->email->send()) {
-					echo "email sent to " . $email;
+					$this->session->set_flashdata('success_flash', 'Email sent to ' . $email);
+					redirect(site_url());
 				} else {
-					echo $this->email->print_debugger();
+					$this->session->set_flashdata('fail_flash', $this->email->print_debugger());
 				}
-			// }
+			}
 		} else {
-			echo "email exists";
+			$this->session->set_flashdata('fail_flash', 'Email already exists');
 		}
+
+		redirect('register');
 	}
 
 	public function final_register($key) {

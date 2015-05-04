@@ -10,6 +10,8 @@
     <link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="<?php echo base_url(); ?>assets/js/script.js"></script>
 </head>
 <body>
 
@@ -18,6 +20,15 @@
     <![endif]-->
 
     <header>
+
+        <?php if ($this->session->flashdata('success_flash')) { ?>
+            <div class="success_flash_message flash_message"><?php echo $this->session->flashdata('success_flash'); ?></div>
+        <?php } ?>
+
+        <?php if ($this->session->flashdata('fail_flash')) { ?>
+            <div class="fail_flash_message flash_message"><?php echo $this->session->flashdata('fail_flash'); ?></div>
+        <?php } ?>
+    
         <h1>Textbook Exchange</h1>
         <?php if ($this->session->userdata('user_id')) { ?>
         <ul>
@@ -29,7 +40,7 @@
         </ul>
 
         <?php echo form_open('search', array('name' => 'search_form')); ?>
-        <input type="text" name="search_value" placeholder="Search ISBN, Textbook Name, Course">
+        <input type="text" name="search_value" class="header_search" placeholder="Search ISBN, Textbook Name, Course">
         <a href="#" onclick="document.search_form.submit(); return false;"><i class="fa fa-search"></i></a>
         </form>
         <?php } ?>

@@ -67,6 +67,42 @@ body {
 			text-decoration: underline;
 		}
 
+.success_flash_message {
+	position: absolute;
+	width: 450px;
+	max-width: 100%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: #2ecc71;
+	padding: 15px;
+	color: white;
+	border: 1px solid #27ae60;
+	border-top: none;
+	border-radius: 6px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
+.fail_flash_message {
+	position: absolute;
+	width: 450px;
+	max-width: 100%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	background-color: #c0392b;
+	padding: 15px;
+	color: white;
+	border: 1px solid #962d22;
+	border-top: none;
+	border-radius: 6px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+}
+
 header {
 	width: 100%;
 	background-color: #ffec94;
@@ -325,6 +361,11 @@ main {
 				margin-bottom: 10px;
 				font-size: 19px;
 			}
+
+		.mid_page_title {
+			font-size: 23px;
+			margin-top: 20px;
+		}
 
 	.about_title {
 		text-align: center;
