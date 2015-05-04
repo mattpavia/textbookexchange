@@ -1,6 +1,6 @@
 <?php $this->load->view('header'); ?>
 
-<h1 class="user_title">User</h1>
+<h1 class="user_title">My Listings</h1>
 
 <?php if (count($textbooks) > 0) { ?>
 <table class="item_list">
@@ -18,7 +18,7 @@
     <?php } ?>
 </table>
 <?php } else { ?>
-<div class="no_data_for_table">No student textbooks found.</div>
+<div class="no_data_for_table">You have no textbooks listed for sale.</div>
 <?php } ?>
     
 <?php $this->load->view('footer'); ?>

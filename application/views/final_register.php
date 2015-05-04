@@ -5,7 +5,7 @@
     <div class="input">
         <?php echo form_password(array('name' => 'password', 'id' => 'password', 'placeholder' => 'Password')); ?>
         <?php echo form_hidden('email', $user->email); ?>
-        <?php echo form_submit(array('name' => 'submit', 'value' => 'Update', 'class' => 'submit')); ?>
+        <?php echo form_submit(array('name' => 'submit', 'value' => 'Add Textbook', 'class' => 'submit')); ?>
     </div>
 <?php echo form_close(); ?>
 

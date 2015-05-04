@@ -20,11 +20,11 @@
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div class="mid_page_title">Student Listed Texbooks</div>
+	<div class="mid_page_title">Student Listed Textbooks</div>
 	<?php if (count($listed_textbooks) > 0) { ?>
 	<table class="item_list">
 		<tr class="table_head">
-		<td>User</td>
+		<td>Student Email</td>
 		<td>Price</td>
 		</tr>
 	    <?php foreach($listed_textbooks as $textbook) { ?>
@@ -35,7 +35,7 @@
 	    <?php } ?>
 	</table>
 	<?php } else { ?>
-	<div class="no_data_for_table">No student textbooks found.</div>
+	<div class="no_data_for_table">No student textbooks found for sale.</div>
 	<?php } ?>
 </div>
     
