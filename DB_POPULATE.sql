@@ -24,7 +24,7 @@ INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`
 
 INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780073523323,"Abraham Silberschatz","Database System Concepts",202.00);
 
-INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`) VALUES ("CSE",216,"Software Engineering", "Liang Cheng",9780073523323);
+INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`) VALUES ("CSE",241, "Database Systems", "Hank Korth",9780073523323);
 
 INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780073383095,"Kenneth Rosen","Discrete Math and its Applications",251.65);
 
@@ -245,7 +245,7 @@ INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`
 INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780801868214,"Watkins","On the Pill",27.00);
 INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`) VALUES ("HIST",118,"History of Modern Medicine", "John Smith",9780801868214);
 
-INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780874201369,"Schmitz","Real Estate Market Analysis",9780874201369);
+INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780874201369,"Schmitz","Real Estate Market Analysis",99.95);
 INSERT INTO `courses`(`department`, `course_number`, `name`, `professor`, `isbn`) VALUES ("IPRE",002,"Field Laboratory", "Field Laboratory",9780874201369);
 
 INSERT INTO `textbooks`(`isbn`, `author`, `title`, `price`) VALUES (9780765620545,"Combs","History of American Foreign Policy",28.95);
