@@ -449,6 +449,13 @@ main {
 		margin-top: 40px;
 	}
 
+	.register_sub {
+		text-align: center;
+		font-size: 20px;
+		margin-top: 10px;
+		margin-bottom: 20px;
+	}
+
 	.list_textbook {
 		text-align: center;
 		font-size: 25px;

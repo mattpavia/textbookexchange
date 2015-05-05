@@ -54,6 +54,13 @@ if (isset($login_error)) {
 ?>
 </div>
 
+<div class="register_link">
+    <h3>Don't have an account?</h3>
+    <a href="<?php echo site_url('register') ?>">Create one!</a>
+</div>
+
+<hr>
+
 <?php echo form_open('main/auth', array('class' => 'login_form')); ?>
     <div class="page_header">Please Login</div>
     <div class="input">
@@ -62,12 +69,5 @@ if (isset($login_error)) {
         <?php echo form_submit(array('name' => 'submit', 'value' => 'Login', 'class' => 'submit')); ?>
     </div>
 <?php echo form_close(); ?>
-
-<hr>
-
-<div class="register_link">
-    <h3>Don't have an account?</h3>
-    <a href="<?php echo site_url('register') ?>">Create one!</a>
-</div>
 
 <?php $this->load->view('footer'); ?>
