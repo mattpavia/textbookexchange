@@ -20,6 +20,18 @@
 		</div>
 	</div>
 	<div class="clear"></div>
+
+	
+	<div class="list_textbook"><a href="#"><i class="fa fa-plus"></i> List this textbook</a></div>
+	<?php echo form_open('textbooks/submit', array('class' => 'textbook_form')); ?>
+	    <div class="input">
+	        <input type="hidden" name="isbn" value="<?php echo $textbook->isbn; ?>" />
+	        <input type="text" name="price" placeholder="Price" />
+	    </div>
+	    <input type="submit" value="List Textbook" class="submit" />
+	</form>
+
+
 	<div class="mid_page_title">Student Listed Textbooks</div>
 	<?php if (count($listed_textbooks) > 0) { ?>
 	<table class="item_list">

@@ -4,6 +4,11 @@ $('document').ready(function() {
 		$('.header_search').focus();
 	});
 
+    $('.list_textbook a').on('click', function(e) {
+        e.preventDefault();
+        $('.textbook_form').show();
+    })
+
 	//
     //Flash Message
     //

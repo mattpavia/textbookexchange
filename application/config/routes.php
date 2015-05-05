@@ -96,7 +96,6 @@ $route['register'] = 'main/register';
 $route['register/(:any)'] = 'main/final_register/$1';
 
 $route['textbooks'] = 'textbooks';
-$route['textbooks/new'] = 'textbooks/add';
 $route['textbooks/(:num)'] = 'textbooks/lookup/$1';
 
 $route['delete_textbook/(:num)'] = 'textbooks/delete/$1';

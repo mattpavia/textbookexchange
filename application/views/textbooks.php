@@ -1,7 +1,5 @@
 <?php $this->load->view('header'); ?>
 
-<div class="list_textbook"><a href="<?php echo site_url() . "textbooks/new"; ?>"><i class="fa fa-plus"></i> List a textbook</a></div>
-
 <h1 class="list_header">All Textbooks</h1>
 <table class="item_list">
 	<tr class="table_head">
