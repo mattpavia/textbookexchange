@@ -129,12 +129,13 @@ class Main extends CI_Controller {
 				$key = $this->user->create($email);
 
 				$this->email->from('register@textbookexchange.us', 'Textbook Exchange');
+				$this->email->reply_to('register@textbookexchange.us', 'Textbook Exchange');
 				$this->email->to($email);
 
 				$this->email->subject('Registratrion verification');
 				$this->email->message('<a href="' . site_url('register/' . $key) . '">Click here</a> to finish registering.');
 
-				if ($this->email->send()) {
+				if ($this->email->send(FALSE)) {
 					$this->session->set_flashdata('success_flash', 'Email sent to ' . $email);
 					redirect(site_url());
 				} else {
