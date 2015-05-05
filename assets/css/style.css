@@ -453,7 +453,11 @@ main {
 		text-align: center;
 		font-size: 20px;
 		margin-top: 10px;
-		margin-bottom: 20px;
+		/*margin-bottom: 20px;*/
+	}
+
+	.register_form .input {
+		margin-top: 20px;
 	}
 
 	.list_textbook {

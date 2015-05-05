@@ -55,7 +55,7 @@ if (isset($login_error)) {
 </div>
 
 <div class="register_link">
-    <h3>Don't have an account?</h3>
+    <h3>Don't have a verified account with Textbook Exchange?</h3>
     <a href="<?php echo site_url('register') ?>">Create one!</a>
 </div>
 
