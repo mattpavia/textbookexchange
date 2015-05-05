@@ -35,6 +35,15 @@
 
 <hr>
 
+<section class="about_section">
+    <h1>What is Textbook Exchange?</h1>
+    <p>Textbook Exchange is a place for Lehigh students to buy and sell their textbooks.</p>
+    <p>The bookstore grossly overcharges for textbooks each semester and gives you less than half of what you paid when you go to sell the same textbook back to them at the end of the semester.</p>
+    <p>Our goal is to remove the bookstore from the picture. Here you can buy and sell your textbooks directly from Lehigh students who have the textbook you need.</p> 
+</section>
+
+<hr>
+
 <div class="form_errors">
 <?php
 echo validation_errors();
