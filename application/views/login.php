@@ -45,21 +45,21 @@
 
 <hr>
 
-<div class="form_errors">
-<?php
-echo validation_errors();
-if (isset($login_error)) {
-	echo "<p>" . $login_error . "</p>";
-}
-?>
-</div>
-
 <div class="register_link">
     <h3>Don't have a verified account with Textbook Exchange?</h3>
     <a href="<?php echo site_url('register') ?>">Create one!</a>
 </div>
 
 <hr>
+
+<div class="form_errors">
+<?php
+echo validation_errors();
+if (isset($login_error)) {
+    echo "<p>" . $login_error . "</p>";
+}
+?>
+</div>
 
 <?php echo form_open('main/auth', array('class' => 'login_form')); ?>
     <div class="page_header">Already have an account? Please Login.</div>
