@@ -38,7 +38,7 @@
 <section class="about_section">
     <h1>What is Textbook Exchange?</h1>
     <p>The Lehigh bookstore is grossly overcharging students to buy and sell their textbooks. Textbook Exchange was created for Lehigh students to save money by creating a student marketplace for textbooks.</p>
-    <p>Looking to buy or sell a textbook? Start by locating your course and clicking the corresponding textbook to the textbooks for sale. You can contact the seller or list your own textbook.</p>
+    <p>Looking to buy or sell a textbook? Start by locating your course and clicking the corresponding textbook to find textbooks for sale. You can contact the seller or list your own textbook from the textbook page.</p>
     <p>When finished, check out the My Listings page to see what books you have listed and remove any you may have sold.</p>
     <p>Thanks for using Textbook Exchange and enjoy!</p>
 </section>
