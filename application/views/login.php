@@ -62,7 +62,7 @@ if (isset($login_error)) {
 <hr>
 
 <?php echo form_open('main/auth', array('class' => 'login_form')); ?>
-    <div class="page_header">Please Login</div>
+    <div class="page_header">Already have an account? Please Login.</div>
     <div class="input">
         <?php echo form_input(array('name' => 'email', 'id' => 'email', 'placeholder' => 'Lehigh Email')); ?>
         <?php echo form_password(array('name' => 'password', 'id' => 'password', 'placeholder' => 'Password')); ?>
