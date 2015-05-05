@@ -25,11 +25,11 @@
             <i class="fa fa-long-arrow-right"></i>
         </li>
         <li>
-            <a href="<?php echo site_url('textbooks/new'); ?>"><i class="fa fa-book"></i>
+            <i class="fa fa-book"></i>
             <div>
                 <p class="big_title title">List</p>
                 <p>Create a textbook listing</p>
-            </div></a>
+            </div>
         </li>
     </ul>
 </section>
