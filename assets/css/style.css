@@ -456,6 +456,10 @@ main {
 		/*margin-bottom: 20px;*/
 	}
 
+		.register_sub .emphasize {
+			text-decoration: underline;
+		}
+
 	.register_form .input {
 		margin-top: 20px;
 	}
