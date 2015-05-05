@@ -255,20 +255,15 @@ main {
 	.popular_wrapper {
 		width: 80%;
 		margin: 0 auto;
-		margin-left: 21%;
 	}
 
 		.popular_textbooks {
 			width: 50%;
 			float: left;
 			margin: 0 auto;
-			/*text-align: center;*/
+			text-align: center;
 			margin-top: 15px;
 		}
-
-			.popular_textbooks ul .short {
-				margin-left: 0;
-			}
 
 			.popular_textbooks h1 {
 				font-size: 35px;
@@ -276,7 +271,7 @@ main {
 			}
 
 				.popular_textbooks ul li {
-					text-align: left;
+					text-align: center;
 				}
 
 				.popular_textbooks ul li .pop_title {
@@ -291,7 +286,7 @@ main {
 			width: 50%;
 			float: left;
 			margin: 0 auto;
-			/*text-align: center;*/
+			text-align: center;
 			margin-top: 15px;
 		}
 
@@ -300,12 +295,8 @@ main {
 				margin-bottom: 20px;
 			}
 
-				.popular_courses ul .short {
-					margin-left: 0;
-				}
-
 				.popular_courses ul li {
-					text-align: left;
+					text-align: center;
 				}
 
 				.popular_courses ul li p {
